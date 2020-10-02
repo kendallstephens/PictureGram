@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
         @comment.user_id = session[:user_id]
         @comment.picture_id = session[:picture_id]
         @comment.save
-        redirect_to picture_path(session[:user_id])
+         redirect_to picture_path(session[:user_id])
     end
 
     def destroy

@@ -2,6 +2,6 @@
 <div>
 
 <% @tag.pictures.each do |picture| %>
-    <%= image_tag picture.image_url %>
+    <img src=<%= picture.image_url %> width="800" height="600">
     <% end %>
   

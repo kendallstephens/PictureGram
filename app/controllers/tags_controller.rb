@@ -10,17 +10,15 @@ class TagsController < ApplicationController
         @pictures = Picture.new
     end
 
+    def new
+       @tag = Tag.new
+      end
+
 
     def create
-        @tag = Tag.new(tag_params)
-        @tag.user_id = session[:user_id]
-        @tag.picture_id = session[:picture_id]
-        tag.save
+        @tag = Tag.create
     end
-
-
-
-
+    
 private
 
     def tag_params

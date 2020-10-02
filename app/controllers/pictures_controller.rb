@@ -13,12 +13,17 @@ class PicturesController < ApplicationController
    
     def create 
          @picture = Picture.new(picture_params) 
+         if params[:picture][:tags][:name] != ""
+            @tag = Tag.create_or_find_by(name: params[:picture][:tags][:name])
+            @picture.tags << @tag 
+         end
          @picture.owner_id = session[:user_id]
          @picture.save
          if @picture.valid?
-            redirect_to pictures_path(session[:user_id])
+            session[:picture_id] = @picture.id
+            redirect_to @user
          else
-             redirect_to new_picture_path(session[:user_id])
+            redirect_to new_picture_path
          end
     end
 

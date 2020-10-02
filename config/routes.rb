@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
   resources :picture_tags
-  resources :tags, only: [:index, :create, :show]
-  resources :comments, only: [:create, :destroy]
-  resources :users, only: [:show, :create]
-  resources :pictures, only: [:index, :show, :update, :create, :destroy]
-  resources :sessions, only: [:create]
+  resources :tags, only: [:index, :new, :create, :show]
+  resources :comments, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create, :show, :edit]
+  resources :pictures, only: [:index, :new, :create, :show, :destroy]
+  resources :sessions
 
   get '/signup', to: 'users#signup'
   get '/login', to: 'sessions#new'
