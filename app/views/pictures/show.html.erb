@@ -1,0 +1,27 @@
+<h4><%= @picture.title %></h4>
+<img src=<%=@picture.image_url%> width="800" height="600">
+<%= button_to "delete photo", @picture, :method => :destroy%> 
+
+
+<div>
+<% @picture.picture_tags.each do |p| %>
+   <h6> <%= p.tag.name  %> </h6>
+    <%end%>
+    <div>
+
+<% @comments.each do |comment| %>
+    <h6> <%= comment.content %></h6>
+    <%end%>
+   <div>
+
+   
+  
+    <%= form_for @comment do |f| %>
+        <%= f.label :comment %>
+        <%= f.text_field :content%>  
+         <%= f.submit %>
+         <%end%>
+
+
+   
+

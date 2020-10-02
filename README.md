@@ -1,0 +1,9 @@
+- [x] Create a Repository
+- [x] Set up the Domain
+- [x] Add seed data
+- [] Add Methods on the Models
+- [x] User Authentication
+- [ ] User Show Page
+- [ ] Picture Show and Index Pages
+- [ ] Tag Show and Index Pages
+- [ ] Extensions and Bonus Features

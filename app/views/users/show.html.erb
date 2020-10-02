@@ -1,0 +1,21 @@
+<h3><%= @user.username %>'s photos</h3>
+<% @pictures.each do |picture| %>
+    <img src=<%= picture.image_url %> width="800" height="600">
+<% end %>
+
+
+  
+    <%= form_for Picture.new do |pic| %>
+    <%= pic.label :image_url %>
+    <%= pic.text_field :image_url %>
+    <%= pic.collection_check_boxes :tag_ids, Tag.all, :id, :name %>
+    <%= pic.label "tag" %>
+    <%= pic.fields_for(:tags, Tag.new) do |t| %>
+        <%= t.text_field :name %>
+
+    <%end%>
+    <%= pic.submit %>
+    <%end%> 
+
+  
+

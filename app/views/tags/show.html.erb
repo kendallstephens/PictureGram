@@ -1,0 +1,7 @@
+<h3><%= @tag.name %></h3>
+<div>
+
+<% @tag.pictures.each do |picture| %>
+    <%= image_tag picture.image_url %>
+    <% end %>
+  
